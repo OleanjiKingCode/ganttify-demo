@@ -1,9 +1,7 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
-import Image from "next/image";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,9 +12,11 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Ri24HoursFill } from "react-icons/ri";
 import { cn } from "@/lib/utils";
-import { IoMdStar } from "react-icons/io";
+import { ChevronDown } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export const Navbar = () => {
+  const router = useRouter();
   const NavMenu = (
     <ul className="grid gap-3 p-4 md:w-[500px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
       <li className="row-span-3">
@@ -55,7 +55,12 @@ export const Navbar = () => {
       className="flex rounded-3xl bg-white px-8 py-4 items-center justify-between w-full "
     >
       <div className="flex gap-16">
-        <div className="space-x-2 flex items-center">
+        <motion.div
+          className="space-x-2 flex items-center cursor-pointer"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => router.refresh()}
+        >
           <motion.img
             initial={{ y: "30px", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -80,13 +85,13 @@ export const Navbar = () => {
           >
             Ganttify
           </motion.span>
-        </div>
+        </motion.div>
         <div className="flex gap-6 text-xs items-center">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
-                  <motion.span
+                  <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{
@@ -94,15 +99,20 @@ export const Navbar = () => {
                       delay: 0.7,
                       ease: "easeIn",
                     }}
+                    className="flex items-center gap-1 text-xs"
                   >
                     Product
-                  </motion.span>
+                    <ChevronDown
+                      className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
+                      aria-hidden="true"
+                    />
+                  </motion.div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>{NavMenu}</NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
-                  <motion.span
+                  <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{
@@ -110,15 +120,20 @@ export const Navbar = () => {
                       delay: 0.8,
                       ease: "easeIn",
                     }}
+                    className="flex items-center gap-1 text-xs"
                   >
                     Solutions
-                  </motion.span>
+                    <ChevronDown
+                      className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
+                      aria-hidden="true"
+                    />
+                  </motion.div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>{NavMenu}</NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
-                  <motion.span
+                  <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{
@@ -126,15 +141,20 @@ export const Navbar = () => {
                       delay: 0.9,
                       ease: "easeIn",
                     }}
+                    className="flex items-center gap-1 text-xs"
                   >
                     Resources
-                  </motion.span>
+                    <ChevronDown
+                      className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
+                      aria-hidden="true"
+                    />
+                  </motion.div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>{NavMenu}</NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
-                  <motion.span
+                  <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{
@@ -142,15 +162,20 @@ export const Navbar = () => {
                       delay: 1,
                       ease: "easeIn",
                     }}
+                    className="flex items-center gap-1 text-xs"
                   >
                     Company
-                  </motion.span>
+                    <ChevronDown
+                      className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
+                      aria-hidden="true"
+                    />
+                  </motion.div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>{NavMenu}</NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
-                  <motion.span
+                  <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{
@@ -158,9 +183,14 @@ export const Navbar = () => {
                       delay: 1.1,
                       ease: "easeIn",
                     }}
+                    className="flex items-center gap-1 text-xs"
                   >
                     Pricing
-                  </motion.span>
+                    <ChevronDown
+                      className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
+                      aria-hidden="true"
+                    />
+                  </motion.div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>{NavMenu}</NavigationMenuContent>
               </NavigationMenuItem>
