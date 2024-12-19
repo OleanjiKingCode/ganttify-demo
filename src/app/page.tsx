@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { TopSection } from "@/components/TopSection";
-import { Trustees } from "@/components/Trustees";
+import Trustees  from "@/components/Trustees";
 
 export default function Home() {
   return (

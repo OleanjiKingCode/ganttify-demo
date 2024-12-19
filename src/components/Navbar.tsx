@@ -46,12 +46,12 @@ export const Navbar = () => {
   );
   return (
     <motion.div
-      initial={{ opacity: 0, y: "100px" }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{
-        y: { duration: 0.9, ease: "easeOut" },
-        opacity: { duration: 1.3, delay: 0.2, ease: "easeIn" },
-      }}
+      // initial={{ opacity: 0, y: "100px" }}
+      // animate={{ y: 0, opacity: 1 }}
+      // transition={{
+      //   y: { duration: 0.9, ease: "easeOut" },
+      //   opacity: { duration: 1.3, delay: 0.2, ease: "easeIn" },
+      // }}
       className="flex rounded-3xl bg-white px-8 py-4 items-center justify-between w-full "
     >
       <div className="flex gap-16">
