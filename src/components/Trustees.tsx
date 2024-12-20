@@ -19,7 +19,7 @@ const Trustees = () => {
             delay: 0.5,
           },
         }}
-        //viewport={{ once: true }}
+        viewport={{ once: true }}
       >
         Trusted by 2 million+ teams
       </motion.span>
@@ -62,7 +62,12 @@ const Trustees = () => {
                 delay: index * 0.2 + 0.5,
               },
             }}
-            // viewport={{ once: true }}
+            whileHover={{
+                scale: 1.2,
+                rotate: 7,
+                transition: { type: "spring", stiffness: 400, damping: 15 },
+            }}
+            viewport={{ once: true }}
           />
         ))}
       </div>

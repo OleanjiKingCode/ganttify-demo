@@ -1,6 +1,9 @@
+import Features from "@/components/Features";
 import { Navbar } from "@/components/Navbar";
+import { Pricing } from "@/components/Pricing";
+import { Reason } from "@/components/Reason";
 import { TopSection } from "@/components/TopSection";
-import Trustees  from "@/components/Trustees";
+import Trustees from "@/components/Trustees";
 
 export default function Home() {
   return (
@@ -8,6 +11,9 @@ export default function Home() {
       <Navbar />
       <TopSection />
       <Trustees />
+      <Features />
+      <Reason />
+      <Pricing/>
     </div>
   );
 }
