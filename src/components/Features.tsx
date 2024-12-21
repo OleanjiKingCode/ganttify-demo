@@ -60,7 +60,7 @@ const Features = () => {
         viewport={{ once: true }}
         className="text-black/80"
       >
-        Ganttify's exceptional flexibility can handle any type of work. And we
+        Ganttify&apos;s exceptional flexibility can handle any type of work. And we
         never stop innovating
       </motion.span>
 

@@ -14,6 +14,7 @@ import { Ri24HoursFill } from "react-icons/ri";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export const Navbar = () => {
   const router = useRouter();
@@ -21,7 +22,7 @@ export const Navbar = () => {
     <ul className="grid gap-3 p-4 md:w-[500px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
       <li className="row-span-3">
         <NavigationMenuLink asChild>
-          <a
+          <Link
             className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
             href="/"
           >
@@ -30,7 +31,7 @@ export const Navbar = () => {
             <p className="text-sm leading-tight text-muted-foreground">
               A console.log developer
             </p>
-          </a>
+          </Link>
         </NavigationMenuLink>
       </li>
       <ListItem href="/docs" title="Introduction">
@@ -282,3 +283,4 @@ const ListItem = React.forwardRef<
     </li>
   );
 });
+ListItem.displayName = "ListItem";

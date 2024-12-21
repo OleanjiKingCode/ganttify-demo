@@ -3,12 +3,9 @@
 import { motion } from "motion/react";
 import React from "react";
 import { GiJigsawBox } from "react-icons/gi";
-import { GoGitPullRequest } from "react-icons/go";
 import { IoIosPeople } from "react-icons/io";
-import { IoFileTray, IoFlash } from "react-icons/io5";
+import { IoFlash } from "react-icons/io5";
 import { PiNetwork } from "react-icons/pi";
-import { RiBarChartBoxLine } from "react-icons/ri";
-import { TfiTarget } from "react-icons/tfi";
 
 export const Reason = () => {
   return (

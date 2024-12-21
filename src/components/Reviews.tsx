@@ -152,7 +152,7 @@ export const TestimonialsSection = () => {
           viewport={{ once: true }}
           className="text-slate-500"
         >
-          Here's what some of our customers say about our platform.
+          Here&apos;s what some of our customers say about our platform.
         </motion.span>
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -193,7 +193,7 @@ export const TestimonialsSection = () => {
               <CardContent className="p-6">
                 <StarRating rating={testimonial.rating} />
                 <blockquote className="mt-4 text-sm font-semibold">
-                  "{testimonial.quote}"
+                  &quot;{testimonial.quote}&quot;
                 </blockquote>
                 <div className="mt-4 flex items-center gap-3">
                   <Image
