@@ -43,9 +43,37 @@ export const Footer = () => {
             width={30}
             height={30}
           />
-          <span className="text-white font-semibold">Ganttify</span>
+          <motion.span
+            initial={{ x: "-20px", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{
+              x: { duration: 0.6, delay: 1, ease: "easeIn" },
+              opacity: { duration: 1.3, delay: 1.1, ease: "easeIn" },
+            }}
+            className="font-semibold text-white"
+          >
+            Ganttify
+          </motion.span>
         </div>
-        <div className="flex gap-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              bounce: 0.3,
+              duration: 1.2,
+              delay: 1.4,
+            },
+          }}
+          viewport={{ once: true }}
+          whileTap={{
+            scale: 0.9,
+            transition: { type: "spring", stiffness: 400, damping: 15 },
+          }}
+          className="flex gap-4"
+        >
           <Link
             href="#"
             className="text-white/20 transition-colors rounded-xl border border-neutral-600 p-3"
@@ -67,12 +95,25 @@ export const Footer = () => {
             <IoLogoInstagram className="h-5 w-5 text-white/60" />
             <span className="sr-only">Instagram</span>
           </Link>
-        </div>
+        </motion.div>
       </div>
 
       {/* Navigation grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12 text-white">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              bounce: 0.4,
+              duration: 0.8,
+              delay: 0.9,
+            },
+          }}
+          viewport={{ once: true }}
+        >
           <h2 className="font-semibold text-white mb-4">Ganttify</h2>
           <ul className="space-y-3">
             <li>
@@ -106,9 +147,22 @@ export const Footer = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              bounce: 0.4,
+              duration: 0.8,
+              delay: 1.0,
+            },
+          }}
+          viewport={{ once: true }}
+        >
           <h2 className="font-semibold text-white mb-4">Solutions</h2>
           <ul className="space-y-3">
             <li>
@@ -152,9 +206,22 @@ export const Footer = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              bounce: 0.4,
+              duration: 0.8,
+              delay: 1.1,
+            },
+          }}
+          viewport={{ once: true }}
+        >
           <h2 className="font-semibold text-white mb-4">About Us</h2>
           <ul className="space-y-3">
             <li>
@@ -183,9 +250,22 @@ export const Footer = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              bounce: 0.4,
+              duration: 0.8,
+              delay: 1.2,
+            },
+          }}
+          viewport={{ once: true }}
+        >
           <h2 className="font-semibold text-white mb-4">Resources</h2>
           <ul className="space-y-3">
             <li>
@@ -219,9 +299,22 @@ export const Footer = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              bounce: 0.4,
+              duration: 0.8,
+              delay: 1.3,
+            },
+          }}
+          viewport={{ once: true }}
+        >
           <h2 className="font-semibold text-white mb-4">Helpful Links</h2>
           <ul className="space-y-3">
             <li>
@@ -240,11 +333,22 @@ export const Footer = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-white border-t border-t-neutral-800 pt-16">
+     <div className="w-full h-px  bg-neutral-800 "></div>
+      <motion.div
+        initial={{ opacity: 0, y: "-40px" }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            y: { duration: 0.9, delay: 1.2, ease: "easeOut" },
+            opacity: { duration: 0.8, delay: 1.4, ease: "easeIn" },
+          },
+        }}
+        className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-white pt-16"
+      >
         <Select defaultValue="us">
           <SelectTrigger className="w-[180px] bg-gray-900 border-gray-800">
             <SelectValue>
@@ -264,7 +368,7 @@ export const Footer = () => {
         </Select>
 
         <p className="text-sm">© Ganttify 2024. All Rights Reserved</p>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
