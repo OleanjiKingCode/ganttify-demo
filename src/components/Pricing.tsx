@@ -75,7 +75,7 @@ export const Pricing = () => {
         opacity: 1,
         transition: {
           y: { duration: 0.9, ease: "easeOut" },
-          opacity: { duration: 1.3, delay: 0.2, ease: "easeIn" },
+          opacity: { duration: 1.1, delay: 0.2, ease: "easeIn" },
         },
       }}
       viewport={{ once: true }}
@@ -100,7 +100,7 @@ export const Pricing = () => {
             opacity: 1,
             transition: {
               y: { duration: 0.4, ease: "easeIn", delay: 0.6 },
-              opacity: { duration: 0.8, delay: 0.7, ease: "easeIn" },
+              opacity: { duration: 0.6, delay: 0.7, ease: "easeIn" },
             },
           }}
           viewport={{ once: true }}
@@ -115,8 +115,8 @@ export const Pricing = () => {
             y: 0,
             opacity: 1,
             transition: {
-              y: { duration: 0.9, ease: "easeIn", delay: 0.8 },
-              opacity: { duration: 1.3, delay: 1.3, ease: "easeIn" },
+              y: { duration: 0.9, ease: "easeIn", delay: 0.5 },
+              opacity: { duration: 1, delay: 0.7, ease: "easeIn" },
             },
           }}
           viewport={{ once: true }}
@@ -136,8 +136,8 @@ export const Pricing = () => {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  y: { duration: 0.9, ease: "easeIn", delay: 0.8 },
-                  opacity: { duration: 1.3, delay: 1.3, ease: "easeIn" },
+                  y: { duration: 0.9, ease: "easeIn", delay: 0.6 },
+                  opacity: { duration: 1, delay: 1, ease: "easeIn" },
                 },
               }}
               viewport={{ once: true }}
@@ -176,17 +176,17 @@ export const Pricing = () => {
                     scale: 1,
                     transition: {
                       y: {
-                        duration: 1.3,
-                        delay: index * 0.2 + 0.4,
+                        duration: 1,
+                        delay: index * 0.2 + 0.3,
                       },
                       opacity: {
-                        duration: 1,
-                        delay: index * 0.2 + 0.6,
+                        duration: 0.7,
+                        delay: index * 0.2 + 0.4,
                         ease: "easeIn",
                       },
                       scale: {
                         duration: 0.3,
-                        delay: 2.5,
+                        delay: 2,
                         ease: "easeIn",
                       },
                     },

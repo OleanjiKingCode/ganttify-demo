@@ -1,4 +1,6 @@
+import { Closing } from "@/components/Closing";
 import Features from "@/components/Features";
+import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { Pricing } from "@/components/Pricing";
 import { Reason } from "@/components/Reason";
@@ -16,6 +18,8 @@ export default function Home() {
       <Reason />
       <Pricing />
       <TestimonialsSection />
+      <Closing />
+      <Footer />
     </div>
   );
 }

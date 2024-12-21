@@ -184,7 +184,9 @@ export const TestimonialsSection = () => {
             viewport={{ once: true }}
             whileHover={{
               scale: 1.05,
-              transition: { type: "spring", stiffness: 400, damping: 15 },
+              transition: {
+                duration: 0.2,
+              },
             }}
           >
             <Card className="border bg-card">
