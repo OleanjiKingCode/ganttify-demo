@@ -78,6 +78,7 @@ export const Pricing = () => {
           opacity: { duration: 1.3, delay: 0.2, ease: "easeIn" },
         },
       }}
+      viewport={{ once: true }}
       className="relative min-h-[105vh] w-full bg-black overflow-hidden rounded-3xl"
     >
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2  translate-y-[80%]  w-[80rem] h-[80rem] bg-white/15  blur-3xl rounded-full"></div>
@@ -98,10 +99,11 @@ export const Pricing = () => {
             y: 0,
             opacity: 1,
             transition: {
-              y: { duration: 0.4, ease: "easeIn", delay: 1.0 },
-              opacity: { duration: 0.8, delay: 1.2, ease: "easeIn" },
+              y: { duration: 0.4, ease: "easeIn", delay: 0.6 },
+              opacity: { duration: 0.8, delay: 0.7, ease: "easeIn" },
             },
           }}
+          viewport={{ once: true }}
           className="flex gap-3 items-center rounded-lg bg-gray-800/20 py-1 px-2 text-white border text-sm border-slate-300/20  w-fit"
         >
           <LuCreditCard /> Pricing
@@ -113,10 +115,11 @@ export const Pricing = () => {
             y: 0,
             opacity: 1,
             transition: {
-              y: { duration: 0.9, ease: "easeIn", delay: 1.3 },
-              opacity: { duration: 1.3, delay: 1.7, ease: "easeIn" },
+              y: { duration: 0.9, ease: "easeIn", delay: 0.8 },
+              opacity: { duration: 1.3, delay: 1.3, ease: "easeIn" },
             },
           }}
+          viewport={{ once: true }}
           className="text-7xl font-bold text-white tracking-tight"
         >
           Simple and Flexible <br /> Pricing
@@ -133,10 +136,11 @@ export const Pricing = () => {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  y: { duration: 0.9, ease: "easeIn", delay: 1.3 },
-                  opacity: { duration: 1.3, delay: 1.7, ease: "easeIn" },
+                  y: { duration: 0.9, ease: "easeIn", delay: 0.8 },
+                  opacity: { duration: 1.3, delay: 1.3, ease: "easeIn" },
                 },
               }}
+              viewport={{ once: true }}
             >
               <TabsTrigger
                 value="annually"
@@ -173,20 +177,21 @@ export const Pricing = () => {
                     transition: {
                       y: {
                         duration: 1.3,
-                        delay: index * 0.2 + 1.1,
+                        delay: index * 0.2 + 0.4,
                       },
                       opacity: {
                         duration: 1,
-                        delay: index * 0.2 + 1.4,
+                        delay: index * 0.2 + 0.6,
                         ease: "easeIn",
                       },
                       scale: {
                         duration: 0.3,
-                        delay: 3,
+                        delay: 2.5,
                         ease: "easeIn",
                       },
                     },
                   }}
+                  viewport={{ once: true }}
                   whileHover={{
                     rotate: 3,
                     transition: { type: "spring", stiffness: 400, damping: 15 },
@@ -221,7 +226,11 @@ export const Pricing = () => {
                             key={feature}
                             className="flex items-center text-sm text-zinc-400"
                           >
-                            <Check className="h-5 w-5 text-white mr-2 flex-shrink-0" />
+                            <Check
+                              className={`h-5 w-5 ${
+                                index === 1 ? "text-black" : "text-white"
+                              } mr-2 flex-shrink-0`}
+                            />
                             {feature}
                           </li>
                         ))}

@@ -2,6 +2,7 @@ import Features from "@/components/Features";
 import { Navbar } from "@/components/Navbar";
 import { Pricing } from "@/components/Pricing";
 import { Reason } from "@/components/Reason";
+import { TestimonialsSection } from "@/components/Reviews";
 import { TopSection } from "@/components/TopSection";
 import Trustees from "@/components/Trustees";
 
@@ -13,7 +14,8 @@ export default function Home() {
       <Trustees />
       <Features />
       <Reason />
-      <Pricing/>
+      <Pricing />
+      <TestimonialsSection />
     </div>
   );
 }
