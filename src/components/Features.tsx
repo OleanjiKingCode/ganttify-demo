@@ -1,6 +1,6 @@
 "use client";
 
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { GiJigsawBox } from "react-icons/gi";
 import { RiBarChartBoxLine } from "react-icons/ri";
 import { GoGitPullRequest } from "react-icons/go";
@@ -73,23 +73,35 @@ const Features = () => {
             gradient: "w-64 h-28 bg-purple-300 top-16 left-10 blur-3xl",
             description:
               "Manage your projects from start to finish. With all your projects on Ganttify, you'll always know who's doing what, by when.",
+            image: "/featureThree.jpg",
+            imagewidth: "w-[500px] h-[500px]",
+            imageParentClass:
+              "absolute w-full top-10 left-[24%] rounded-2xl overflow-hidden",
           },
           {
             id: 2,
             icon: <GoGitPullRequest />,
             title: "Workflows and Automation",
             gradient:
-              "w-64 h-28 bg-teal-400/50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl",
+              "w-72 h-32 bg-orange-400/50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl",
             description:
               "Manage your projects from start to finish. With all your projects on Ganttify, you'll always know who's doing what, by when.",
+            image: "/featureTwo.png",
+            imagewidth: "w-[300px] h-[300px]",
+            imageParentClass:
+              "absolute w-full top-1 left-[20%] rounded-2xl overflow-hidden",
           },
           {
             id: 3,
             icon: <TfiTarget />,
             title: "Goals and Reporting",
-            gradient: "w-64 h-28 bg-teal-200/30 bottom-12 right-10 blur-3xl",
+            gradient: "w-72 h-28 bg-teal-200 bottom-12 right-10 blur-3xl",
             description:
               "See how each project and portfolio ladders up to the company objectives and keep everyone focused on the work that matters.",
+            image: "/featureOne.png",
+            imagewidth: "w-[500px] h-[281px] rounded-3xl",
+            imageParentClass:
+              "absolute w-full top-1 left-[20%] rounded-3xl overflow-hidden",
           },
           {
             id: 4,
@@ -99,6 +111,10 @@ const Features = () => {
               "w-64 h-28 bg-purple-200 top-1/2 right-3 transform  -translate-y-1/2 blur-3xl",
             description:
               "Get the visibility you need to plan accurate timelines, adjust workloads, and stay on track to achieve your objectives.",
+            image: "/featureFour.png",
+            imagewidth: "w-[400px] h-[400px]",
+            imageParentClass:
+              "absolute w-full -top-12 left-[25%] rounded-2xl overflow-hidden",
           },
         ].map((item, index) => (
           <motion.div
@@ -120,13 +136,15 @@ const Features = () => {
           >
             <div className="w-full h-[300px] rounded-3xl border border-gray-200 relative overflow-hidden">
               <div className={`absolute ${item.gradient}`}></div>
-              {/* <Image
-                src="/workflow.png"
-                alt=""
-                width={500}
-                height={500}
-                className="absolute w-[100px] h-[120px]"
-              /> */}
+              <div className={item.imageParentClass}>
+                <Image
+                  src={item.image}
+                  alt=""
+                  width={500}
+                  height={500}
+                  className={item.imagewidth}
+                />
+              </div>
             </div>
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-4 text-2xl font-semibold">

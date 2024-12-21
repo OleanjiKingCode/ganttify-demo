@@ -15,14 +15,68 @@ import {
   CardFooter,
 } from "./ui/card";
 
+const plans = [
+  {
+    title: "Personal",
+    price: "$29",
+    subtitle: "per month",
+    description:
+      "For individuals and small teams looking to manage their tasks",
+    features: [
+      "Unlimited contacts",
+      "Bulk emailing",
+      "AI Integration",
+      "View & share up to 3 years",
+      "Collaboration & permissions",
+    ],
+    bgClass: "bg-zinc-700 text-white border-zinc-800",
+    buttonClass: "bg-zinc-800 hover:bg-zinc-700",
+  },
+  {
+    title: "Pro",
+    price: "$39",
+    subtitle: "per month",
+    description:
+      "For growing teams that need to track their projects' progress and hit deadlines",
+    features: [
+      "Email sequences",
+      "Send emails from multiple domains",
+      "Connect multiple email accounts",
+      "Fully adjustable sharing permissions",
+      "Migration services",
+    ],
+    bgClass: "bg-white text-black scale-[1.2]",
+    buttonClass: "bg-zinc-800 hover:bg-zinc-700",
+  },
+  {
+    title: "Beyond limits",
+    price: "Custom Plan",
+    subtitle: "",
+    description:
+      "For companies that need to manage a portfolio of work and goals across departments",
+    features: [
+      "White glove onboarding",
+      "Custom billing",
+      "Dedicated slack channel",
+      "Dedicated point of contact",
+      "Unlimited reporting",
+    ],
+    bgClass: "bg-zinc-700 text-white border-zinc-800",
+    buttonClass: "bg-zinc-800 hover:bg-zinc-700",
+  },
+];
+
 export const Pricing = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: "100px" }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{
-        y: { duration: 0.9, ease: "easeOut" },
-        opacity: { duration: 1.3, delay: 0.2, ease: "easeIn" },
+      whileInView={{
+        y: 0,
+        opacity: 1,
+        transition: {
+          y: { duration: 0.9, ease: "easeOut" },
+          opacity: { duration: 1.3, delay: 0.2, ease: "easeIn" },
+        },
       }}
       className="relative min-h-[105vh] w-full bg-black overflow-hidden rounded-3xl"
     >
@@ -39,11 +93,14 @@ export const Pricing = () => {
 
       <div className="flex flex-col gap-10 absolute inset-0  p-[8%]">
         <motion.div
-          initial={{ y: "-30px", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            y: { duration: 0.9, ease: "easeIn", delay: 1.4 },
-            opacity: { duration: 1, delay: 1.6, ease: "easeIn" },
+          initial={{ y: "-20px", opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              y: { duration: 0.4, ease: "easeIn", delay: 1.0 },
+              opacity: { duration: 0.8, delay: 1.2, ease: "easeIn" },
+            },
           }}
           className="flex gap-3 items-center rounded-lg bg-gray-800/20 py-1 px-2 text-white border text-sm border-slate-300/20  w-fit"
         >
@@ -51,11 +108,14 @@ export const Pricing = () => {
         </motion.div>
 
         <motion.span
-          initial={{ y: "60px", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            y: { duration: 0.5, ease: "easeIn", delay: 1 },
-            opacity: { duration: 1.1, delay: 1.2, ease: "easeIn" },
+          initial={{ y: "-80px", opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              y: { duration: 0.9, ease: "easeIn", delay: 1.3 },
+              opacity: { duration: 1.3, delay: 1.7, ease: "easeIn" },
+            },
           }}
           className="text-7xl font-bold text-white tracking-tight"
         >
@@ -63,151 +123,121 @@ export const Pricing = () => {
         </motion.span>
 
         <Tabs defaultValue="annually" className="w-full -mt-[90px]">
-          <TabsList className="flex items-center bg-neutral-800 w-fit gap-1 py-[22px] justify-self-end">
-            <TabsTrigger
-              value="annually"
-              className="px-8 py-2 text-white data-[state=active]:text-black font-semibold"
+          <TabsList
+            asChild
+            className="flex items-center bg-neutral-800 w-fit gap-1 py-[22px] justify-self-end"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: "40px" }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  y: { duration: 0.9, ease: "easeIn", delay: 1.3 },
+                  opacity: { duration: 1.3, delay: 1.7, ease: "easeIn" },
+                },
+              }}
             >
-              Annually
-            </TabsTrigger>
-            <TabsTrigger
-              value="monthly"
-              className="px-8 py-2 text-white data-[state=active]:text-black font-semibold"
-            >
-              Monthly
-            </TabsTrigger>
+              <TabsTrigger
+                value="annually"
+                className="px-8 py-2 text-white data-[state=active]:text-black font-semibold"
+              >
+                Annually
+              </TabsTrigger>
+              <TabsTrigger
+                value="monthly"
+                className="px-8 py-2 text-white data-[state=active]:text-black font-semibold"
+              >
+                Monthly
+              </TabsTrigger>
+            </motion.div>
           </TabsList>
           <TabsContent
             value="annually"
             className="pt-[10%] flex items-center justify-between gap-10 px-[3%]"
           >
-            {/* Personal Plan */}
-            <Card className="relative bg-zinc-700 border-zinc-800 text-white w-[30%] rounded-3xl">
-              <CardHeader>
-                <CardTitle>
-                  <h3 className="text-xl font-medium mb-2">Personal</h3>
-                  <div className="flex items-baseline">
-                    <span className="text-5xl font-bold">$29</span>
-                    <span className="ml-2 text-zinc-400">per month</span>
-                  </div>
-                </CardTitle>
-                <p className="text-sm text-zinc-400 mt-4 pb-5 border-b border-dashed border-b-zinc-600">
-                  For individuals and small teams looking to manage their tasks
-                </p>
-              </CardHeader>
-              <CardContent>
-                <p className="font-medium mb-4">This Plan Includes:</p>
-                <ul className="space-y-3">
-                  {[
-                    "Unlimited contacts",
-                    "Bulk emailing",
-                    "AI Integration",
-                    "View & share up to 3 years",
-                    "Collaboration & permissions",
-                  ].map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-center text-sm text-zinc-400"
-                    >
-                      <Check className="h-5 w-5 text-white mr-2 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-zinc-800 hover:bg-zinc-700 text-white h-[52px] rounded-2xl">
-                  Get Started
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* Pro Plan */}
-            <Card className="relative bg-white text-black scale-[1.2] z-10 w-[30%] rounded-3xl">
-              <CardHeader>
-                <CardTitle>
-                  <h3 className="text-xl font-medium mb-2">Pro</h3>
-                  <div className="flex items-baseline">
-                    <span className="text-5xl font-bold">$39</span>
-                    <span className="ml-2 text-zinc-500">per month</span>
-                  </div>
-                </CardTitle>
-                <p className="text-sm text-zinc-500 mt-4 border-b border-dashed bprder-b-zinc-500 pb-5">
-                  For growing teams that need to track their projects' progress
-                  and hit deadlines
-                </p>
-              </CardHeader>
-              <CardContent>
-                <p className="font-medium mb-4">
-                  Everything in Standard, plus:
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Email sequences",
-                    "Send emails from multiple domains",
-                    "Connect multiple email accounts",
-                    "Fully adjustable sharing permissions",
-                    "Migration services",
-                  ].map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-center text-sm text-zinc-500"
-                    >
-                      <Check className="h-5 w-5 text-black mr-2 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-zinc-800 hover:bg-zinc-700 text-white h-[52px] rounded-2xl">
-                  Get Started
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* Custom Plan */}
-            <Card className="relative bg-zinc-700 border-zinc-800 text-white w-[30%] rounded-3xl">
-              <CardHeader>
-                <CardTitle>
-                  <h3 className="text-xl font-medium mb-2">Beyond limits</h3>
-                  <div className="flex items-baseline">
-                    <span className="text-2xl font-bold">Custom Plan</span>
-                  </div>
-                </CardTitle>
-                <p className="text-sm text-zinc-400 mt-4 pb-5 border-b border-dashed border-b-zinc-600">
-                  For companies that need to manage a portfolio of work and
-                  goals across departments
-                </p>
-              </CardHeader>
-              <CardContent>
-                <p className="font-medium mb-4">
-                  Everything in Standard & Pro, plus:
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "White glove onboarding",
-                    "Custom billing",
-                    "Dedicated slack channel",
-                    "Dedicated point of contact",
-                    "Unlimited reporting",
-                  ].map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-center text-sm text-zinc-400"
-                    >
-                      <Check className="h-5 w-5 text-white mr-2 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-zinc-800 hover:bg-zinc-700 text-white h-[52px] rounded-2xl">
-                  Get Started
-                </Button>
-              </CardFooter>
-            </Card>
+            <div className="flex justify-between space-x-4">
+              {plans.map((plan, index) => (
+                <motion.div
+                  key={plan.title}
+                  className={`relative w-[30%] rounded-3xl ${plan.bgClass}`}
+                  initial={{
+                    opacity: 0,
+                    y: 200 + index * 100,
+                    scale: index === 1 ? 0.9 : 1,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      y: {
+                        duration: 1.3,
+                        delay: index * 0.2 + 1.1,
+                      },
+                      opacity: {
+                        duration: 1,
+                        delay: index * 0.2 + 1.4,
+                        ease: "easeIn",
+                      },
+                      scale: {
+                        duration: 0.3,
+                        delay: 3,
+                        ease: "easeIn",
+                      },
+                    },
+                  }}
+                  whileHover={{
+                    rotate: 3,
+                    transition: { type: "spring", stiffness: 400, damping: 15 },
+                  }}
+                >
+                  <Card className={`${plan.bgClass}`}>
+                    <CardHeader>
+                      <CardTitle>
+                        <h3 className="text-xl font-medium mb-2">
+                          {plan.title}
+                        </h3>
+                        <div className="flex items-baseline">
+                          <span className="text-5xl font-bold">
+                            {plan.price}
+                          </span>
+                          {plan.subtitle && (
+                            <span className="ml-2 text-zinc-400">
+                              {plan.subtitle}
+                            </span>
+                          )}
+                        </div>
+                      </CardTitle>
+                      <p className="text-sm text-zinc-400 mt-4 pb-5 border-b border-dashed border-b-zinc-600">
+                        {plan.description}
+                      </p>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="font-medium mb-4">This Plan Includes:</p>
+                      <ul className="space-y-3">
+                        {plan.features.map((feature) => (
+                          <li
+                            key={feature}
+                            className="flex items-center text-sm text-zinc-400"
+                          >
+                            <Check className="h-5 w-5 text-white mr-2 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                    <CardFooter>
+                      <Button
+                        className={`w-full text-white h-[52px] rounded-2xl ${plan.buttonClass}`}
+                      >
+                        Get Started
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
           </TabsContent>
           <TabsContent value="monthly">20</TabsContent>
         </Tabs>
